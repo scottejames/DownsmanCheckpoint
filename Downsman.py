@@ -4,13 +4,19 @@ import openpyxl
 import os
 import sys
 import time
+import tkinter as tk
 
 # important places in the sheet
 CHECKPOINT_NUMBER_LOCATION = 'D4'
 CHECKPOINT_NAME_LOCATION = 'F4'
-CHECKPOINT_TIME_TARGET = 'B'
 CHECKPOINT_TIME_TARGET_ROW = 7
 
+
+
+
+
+
+    
 checkpoint_number ='1'
 checkpoint_name = 'scotts checkpoint'
 checkpoint_time_target = 31
@@ -27,7 +33,7 @@ sheet[CHECKPOINT_NAME_LOCATION] = checkpoint_name
 row = CHECKPOINT_TIME_TARGET_ROW
 for i in range(0, 20):
     row = row + 1
-    cell = CHECKPOINT_TIME_TARGET + str(row)
+    cell = 'B' + str(row)
     score_cell = 'C' + str(row)
     team_cell = 'D' + str(row)
     sheet[cell] = '00:' + str(checkpoint_time_target + i)
@@ -36,7 +42,6 @@ for i in range(0, 20):
 
 resultsName = os.path.join(save_path, "Results.xlsx")
 wb.save(resultsName)
-
 
 
 
